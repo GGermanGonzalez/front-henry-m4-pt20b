@@ -1,5 +1,5 @@
 
-import Link from "next/link";
+
 import React from "react";
 
 interface IButton {
@@ -19,7 +19,7 @@ const Button = ({
 }: IButton) => {
   
   return (
-    //<Link href={href}>
+   
     <button
       className={`border-2 rounded transition-all hover:scale-105 active:scale-95 text-primary bg-${variant} ${className}`}
       onClick={onClick}
@@ -27,7 +27,7 @@ const Button = ({
     >
       {children}
     </button>
-    //</Link>
+    
   );
 };
 
