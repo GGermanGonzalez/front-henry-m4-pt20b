@@ -9,7 +9,8 @@ import Alert from "@/components/Alert/Alert";
 
 const Page = () => {
   const { user, setUser } = useContext(AuthContext);
-  const [cart, setCart] = useState<IProduct[]>(JSON.parse(localStorage.getItem("cart") || "[]") || []);
+  const [cart, setCart] = useState<IProduct[]>(typeof window !== "undefined" ? JSON.parse(localStorage.getItem("cart") || "[]") : []);
+
   const [totalPrice, setTotalPrice] = useState(0);
   const [alertMessage, setAlertMessage] = useState("");
   const [alertType, setAlertType] = useState<"success" | "error" | null>(null);
